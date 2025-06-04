@@ -3,7 +3,7 @@ name: simple workflow
 on:
     push:
         branches:
-          - main
+          - master
 
 jobs:
     build:
