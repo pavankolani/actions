@@ -1,4 +1,6 @@
-name: simple workflow
+# jobs in github actions
+
+name: Demo Workflows
 
 on:
     push:
@@ -7,10 +9,17 @@ on:
 
 jobs:
     build:
-      runs-on: ubuntu-latest
+        name: build
+        needs: [Development]
+        steps:
+          - name: Build and eploy on cloud
 
-      steps: 
-        - uses: actions/checkout@v4
-        - name: run a oneline script 
-          run: echo "Hello world"
-        
+    dev:
+        name: Development
+        steps:
+          - name: Run the Development
+
+    test:
+        name: testing
+        steps:
+          - name: testing the application
